@@ -13,13 +13,13 @@
   <div class="container-fluid">
     <div class="jumbotron text-center">
       <h1>Mission to Mars</h1>      
-      <p><a class="btn btn-primary btn-lg" href="../app.py/scrape" role="button">Scrape Mars Data</a></p>
+      <p><a class="btn btn-primary btn-lg" href="../scrape" role="button">Scrape Mars Data</a></p>
     </div>
   <!-- News Section -->
   <div class="container">
     <h3>Latest Mars News</h3>
-    <h6 style="color: #c1440e">{{ mars_info.mars_news_title }}</h6>
-    <p>{{ mars_info.news_paragraph }}</p>
+    <h6 style="color: #c1440e">{{ marsDB.mars_news_title }}</h6>
+    <p>{{ marsDB.mars_news_info }}</p>
 </div>
 
 <div class="container">
@@ -27,7 +27,7 @@
         <!-- Left Image-->
         <div class="col-lg-8 col-md-8 col-sm-12">
             <h3>Featured Mars Image</h3>
-            <img src="{{ mars_info.mars_Image }}" style="max-width:100%; max-height: auto;" alt="Mars Featured Image">
+            <img src="{{ marsDB.mars_Image }}" style="max-width:100%; max-height: auto;" alt="Mars Featured Image">
         </div>
 
         <!-- Weather Card -->
@@ -36,7 +36,7 @@
             <div class="card" style="width: 18rem;">
                 <div class="card-body text-white bg-dark">
                     <h6 class="card-title">Current Weather on Mars</h6>
-                    <p class="card-text">{{ mars_info.mars_weather}}</p>
+                    <p class="card-text">{{ marsDB.mars_weather}}</p>
                 </div>
 
             </div>
@@ -45,7 +45,7 @@
             <br>
             <h3>Mars Facts</h3>
             <div style="max-width: 450px; max-height: 150px; font-size: 15px; margin-bottom: 65px;">
-                {{mars_info.mars_facts|safe}}
+                {{marsDB.mars_facts|safe}}
             </div>
         </div> <!-- col4 -->
     </div><!-- Row -->
@@ -57,7 +57,7 @@
     <hr>
     <div class="col-md-12">
         <div class="row">
-            {% for item in mars_info.hemisphere_images %}
+            {% for item in marsDB.hemisphere_images %}
             <div class="col-md-6">
                 <div class="card text-white bg-dark" style="margin: 30px;">
                     <img class="card-img-top" src="{{ item.img_url }}" />

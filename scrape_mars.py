@@ -109,7 +109,6 @@ def scrape():
 
     return output
 
-
 # print(newstitle, newssummary, imgsourcefinal, mars_weather, facts, hemisphereimgs)
 
 
